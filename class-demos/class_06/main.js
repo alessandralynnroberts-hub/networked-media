@@ -17,7 +17,7 @@ window.onload = () => {
 
   // get element by id
   //retrieves a single javascript element using an id
-  let mainElement = document.getElementbyId("main");
+  let mainElement = document.getElementById("main");
   mainElement.style.color = "white";
   //js has highest priority and will overwrite any css rules
   console.log(mainElement);
@@ -31,17 +31,19 @@ window.onload = () => {
   blueParagraph.style.backgroundColor = "navy";
 
   //query selector for ID works the same as getElementByID
-  let containerDiv = pdcument.querySelector("#blue-div");
+  let containerDiv = document.querySelector("#blue-div");
   for (let i = 0; i < 60; i++) {
     //creating an element on a webpage:
     //1. declare what type of element we are creating
     let newSpan = document.createElement("span");
     //2. modify that element / content
     newSpan.textContent = "new span";
-    newSpan.classList.add(allSpan)
+    newSpan.classList.add("allSpan");
     // generate a random color
     let c = Math.floor(Math.random() * colors.length);
-    newSpan.style.background.color = colors[c];
+    newSpan.style.backgroundColor = colors[c];
+
+
     //3. add the created element to the page s
     //anywhere on the bottom of the html: document.body
     //in a specific container: select that element
@@ -52,7 +54,7 @@ window.onload = () => {
 //2 params
 // 1. callback 
 //2. amount of time in ms
-  setInterval(()=>{
+  //setInterval();
 console.log('2 seconds have passed')
 //two ways to retrieve all the elements of a class
 //document.getElementsByClassName('all-spans')
@@ -65,13 +67,13 @@ for(let s of allSpans) {
 console.log(s.style.transform)
 
 
+}}
 
 
-}
 
-  }, 2000);
+  //}, 2000);
 
-  setInterval(intervalFunction () {}, 2000);
+  setInterval(intervalFunction(), 2000);
 
 
   //helper functions go after window.unload {}
@@ -81,4 +83,4 @@ function intervalFunction(){
 
 }
 
-};
+
