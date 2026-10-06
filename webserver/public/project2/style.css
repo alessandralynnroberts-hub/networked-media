@@ -1,0 +1,13 @@
+.transition {
+    width: 100px;
+    height: 100px;
+    background: red;
+    transition-property: transform, background;
+    transition-duration: 130s;
+    transition-delay: 2s;
+}
+
+.transition:hover {
+    transform: rotate(90deg);
+    background: transparent;
+}
