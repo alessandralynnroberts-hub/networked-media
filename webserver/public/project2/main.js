@@ -1,7 +1,12 @@
-const message = document.querySelector(".message");
-const el = document.querySelector(".transition");
-const disappear = 
+const insides = document.querySelector(".insides");
 
+const message = document.querySelector(".message");
+
+
+const transition = document.querySelector(".transition");
+
+// was considering making each letter its own class in html so make each of them shake for a more intricate animation
+// decided maybe not...maybe another time. 
 
 const messages = [
   "Hey there",
@@ -21,26 +26,64 @@ const messages = [
   "No, don't leave now. It wouldn't make a difference",
   "It's too late to save me",
   "It's not your fault. You didn't ask to be born a parasite",
-  "...ss",
-  "If you leave now, I will die alone",
+  "...",
   "I must look pretty bad right now",
   "You don't want to see me like this",
   "...",
   "Or maybe you do...since you're still here",
-  "I am dead now. You will have to find another host."
+  "If you leave now, I will die alone",
 ];
 
 let timer;
 let currentMessage = 0;
-const interval = 2000; // 2 seconds per message
+const interval = 5000; 
 
-el.addEventListener("mouseenter", () => {
+transition.addEventListener("mouseenter", () => {
   if (currentMessage >= messages.length) return;
+message.style.opacity = "1";
 
   message.textContent = messages[currentMessage];
 
+
   timer = setInterval(() => {
     currentMessage++;
+
+    // front end web dev prof tsught me this trick about keeping display:none in css then changing to display:block in js
+    if(currentMessage == 4 || currentMessage == 6){
+       transition.classList.add("deepFried");
+        insides.style.display = "block";
+        message.classList.add("loud");
+    
+    } else {
+        transition.classList.remove("deepFried");
+        insides.style.display = "none";
+        message.classList.remove("loud");
+        
+    }
+    // got rid of the else and removing here because this is ali's POINT OF NO RETURN in their death
+
+if(currentMessage == 13){
+       transition.classList.add("dying01");
+        message.classList.add("loud");
+
+        
+    }
+
+    if(currentMessage == 18){
+       transition.classList.add("dying02");
+        message.classList.add("loud");
+    
+    }
+
+    
+    if(currentMessage == 22){
+       transition.classList.add("dying03");
+        message.classList.add("loud");
+    
+        
+    }
+
+
 
     if (currentMessage >= messages.length) {
       clearInterval(timer);
@@ -52,9 +95,9 @@ el.addEventListener("mouseenter", () => {
 
 });
 
-el.addEventListener("mouseleave", () => {
+transition.addEventListener("mouseleave", () => {
   clearInterval(timer);
 
-  document.getElementByID(messages).style.opacity = "0";
+  message.style.opacity = "0";
 });
 

@@ -1,13 +1,202 @@
-.transition {
-    width: 100px;
-    height: 100px;
-    background: red;
-    transition-property: transform, background;
+body {
+    background-color: black;
+}
+
+
+
+/* source for animations in my documentation  */
+
+
+@keyframes shaking {
+    0% {
+        transform: translateY(0px)
+    }
+
+    25% {
+        transform: translateY(2px)
+    }
+
+    /* i can do something here, like have a "flash" at a certain position */
+    50% {
+        transform: translateY(-2px)
+    }
+
+    75% {
+        transform: translateY(2px)
+    }
+
+    100% {
+        transform: translateY(2px)
+    }
+}
+
+@keyframes quivering {
+    0% {
+        transform: translateX(0px)
+    }
+
+    25% {
+        transform: translateX(5px)
+    }
+
+    /* i can do something here, like have a "flash" at a certain position */
+    50% {
+        transform: translateX(-5px)
+    }
+
+    75% {
+        transform: translateX(5px)
+    }
+
+    100% {
+        transform: translateX(5px)
+    }
+}
+
+
+/* figured out how to do this overlapping part with the help of Professor Lenin in front end web dev */
+/* i was struggling so much with getting one image to disappear and reveal another underneath */
+
+.overlap {
+
+
+position: relative;
+width: 500px;
+    height: 500px;
+
+
+}
+
+.overlap img{
+
+    position: absolute;
+
+width: 500;
+    height: 500;
+    transition-property: transform;
     transition-duration: 130s;
     transition-delay: 2s;
+    display: block;
+    margin-left: auto;
+    margin-right: 500px;
+}
+
+/* font mimicking two of my experimental short films I've done  */
+
+.message {
+    filter: blur(2px);
+    color: rgb(251, 251, 120);
+    animation: shaking 0.3s infinite;
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 20px;
+    font-family: OCR A Std, monospace;
+    font-size: 50px;
+}
+
+
+/* red scary text */
+/* also did this with help of front end web dev we were literally learning this in class */
+
+.loud {
+    color: rgb(212, 0, 0);
+}
+
+.idle {
+
+width: 600;
+    height: 300px;
+    transition-property: transform;
+    transition-duration: 130s;
+    transition-delay: 2s;
+    display: block;
+    margin-left: auto;
+    margin-right: 500px;
+
+}
+
+.overlap:hover .idle {
+
+
+display: none;
+
+
+}
+
+
+.transition {
+    width: 900px;
+    height: 600px;
+    transition-property: transform;
+    transition-duration: 130s;
+    transition-delay: 2s;
+    display: block;
+    margin-left: auto;
+        margin-right: 500px;
+
+
 }
 
 .transition:hover {
-    transform: rotate(90deg);
-    background: transparent;
+    z-index: 1;
 }
+
+/* thought about making these organs take up the whole screen */
+/* then decided wanted a little circle showing a snippit of this at another area of the screen */
+/* mimicks Don Hertzfeldt's 'it's such a beautiful day' animated film */
+
+.insides {
+margin-left: 500px;
+display: none;
+justify-content: flex-end;
+
+}
+
+/* i dont know how else to make myself look more disturbing on css without getting another awkward gif of myself */
+/* css filters are now my best friend  */
+
+.deepFried {
+
+
+filter: brightness(150%) contrast(250%) saturate(250%) hue-rotate(10deg);
+animation: quivering 0.3s infinite;
+
+
+}
+
+/* want to die in stages, gradual */
+
+.dying01 {
+filter: brightness(40%) blur(3px) saturate(250%) hue-rotate(10deg);
+}
+
+.dying02{
+
+
+filter: brightness(15%) blur(5px) saturate(250%) hue-rotate(10deg);
+animation: quivering 0.3s infinite;
+
+}
+
+.dying03{
+
+filter: brightness(0%)
+
+
+}
+
+
+/* grain filter overlay over the entire screen?? */
+/* double and skew the font......? */
+/* maybe also have background change after a certain point or something flashing????? */
+
+/* how can I make it so at a certain point or interval the image changes completely? */
+/* Am I able to do that with just css or do i need js? */
+
+
+/* also i want the text to change at a certain point.  */
+/* "Those are my insides" should turn RED AND SCARYYYYYYY */
+
+
+/* maybe have this imitate the style of my Archival short film or 3AM Fall */
+
