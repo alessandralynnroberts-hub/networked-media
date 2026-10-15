@@ -136,7 +136,8 @@ display: none;
 
 
 }
-
+/* don't really understand this to be honest. My professor from front-end-web put it in */
+/* im assuming it's for positioning? */
 .transition:hover {
     z-index: 1;
 }
