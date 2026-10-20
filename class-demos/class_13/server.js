@@ -39,5 +39,22 @@ app.listen(80, function () {
 app.get('/', (request, response)=>{
 // response will contain all the information we send back from the server to the client
 console.log("received a request at / route!")
+// we ALWAYS need to have a response
+response.send('this is <em>some</em> data')
 })
 response.send('this is my first server!')
+app.listen(8080, ()=>{
+  console.log('started or restarted the server ')
+  
+
+})
+
+// POST looks exactly the same and will handle the form data
+app.post('/form-upload', (request, response)=>{
+
+
+console.log(request.body)
+// send the client to a different route
+
+})
+
