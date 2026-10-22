@@ -36,6 +36,7 @@ width: 500;
     display: block;
     margin-left: auto;
     margin-right: 500px;
+    left: 200px;
 }
 
 /* font mimicking two of my experimental short films I've done  */
@@ -44,29 +45,29 @@ width: 500;
     filter: blur(2px);
     color: rgb(251, 251, 120);
     max-width: 1000px;
-    margin: 20px auto;
-    padding: 20px;
     font-family: OCR A Std, monospace;
     font-size: 50px;
     display: block;
+    margin: 20px 0 20px 200px;
+    padding: 20px;
 }
 
 .bio {
 
-filter: blur(2px);
+filter: blur(1.5px);
     color: rgb(251, 251, 120);
     max-width: 1000px;
-    margin: 20px auto;
-    padding: 20px;
     font-family: OCR A Std, monospace;
-    font-size: 50px;
+    font-size: 35px;
     display: block;
-
+    margin: 20px 0 20px 200px;
+    padding: 10px;
 
 }
 
-.films{
-filter: blur(2px);
+
+.films {
+    filter: blur(2px);
     color: rgb(251, 251, 120);
     max-width: 1000px;
     padding: 20px;
@@ -74,8 +75,9 @@ filter: blur(2px);
     font-size: 50px;
     text-align: end;
     margin-left: 500px;
-    padding: 20px;
 
+    display: block;
+    text-decoration: none;
 }
 
 .producing {
@@ -87,7 +89,6 @@ filter: blur(2px);
     font-size: 50px;
 text-align: end;
     margin-left: 500px;
-    padding: 20px;
 
 }
 
@@ -101,8 +102,7 @@ filter: blur(2px);
     display: grid;
     place-content: end;
     font-size: 50px;
-        margin-left: 500px;
-        padding: 20px;
+    margin-left: 500px;
 
 }
 
@@ -116,9 +116,17 @@ filter: blur(2px);
     font-size: 50px;
     text-align: end;
     margin-left: 500px;
-    padding: 0;
 
 
+}
+
+.films,
+.producing,
+.sandbox,
+.resume {
+    position: relative;
+    top: -500px;
+    margin-top: 0;
 }
 
 
@@ -137,8 +145,10 @@ width: 600;
     transition-duration: 130s;
     transition-delay: 2s;
     display: block;
-    margin-left: auto;
-    margin-right: 500px;
+    margin-left: 1000px;
+    margin-right: 1000px;
+    left: 200px;
+    padding: 10px;
 
 }
 
@@ -147,71 +157,11 @@ width: 600;
 
 display: none;
 
-
-}
-
-
-.transition {
-    width: 900px;
-    height: 600px;
-    transition-property: transform;
-    transition-duration: 130s;
-    transition-delay: 2s;
-    display: block;
-    margin-left: auto;
-        margin-right: 500px;
-
-
-}
-/* don't really understand this to be honest. My professor from front-end-web put it in */
-/* im assuming it's for positioning? */
-.transition:hover {
-    z-index: 1;
 }
 
 /* thought about making these organs take up the whole screen */
 /* then decided wanted a little circle showing a snippit of this at another area of the screen */
 /* mimicks Don Hertzfeldt's 'it's such a beautiful day' animated film */
-
-.insides {
-margin-left: 500px;
-display: none;
-justify-content: flex-end;
-
-}
-
-/* i dont know how else to make myself look more disturbing on css without getting another awkward gif of myself */
-/* css filters are now my best friend  */
-
-.deepFried {
-
-
-filter: brightness(150%) contrast(250%) saturate(250%) hue-rotate(10deg);
-animation: quivering 0.3s infinite;
-
-
-}
-
-/* want to die in stages, gradual */
-
-.dying01 {
-filter: brightness(40%) blur(3px) saturate(250%) hue-rotate(10deg);
-}
-
-.dying02{
-
-
-filter: brightness(15%) blur(5px) saturate(250%) hue-rotate(10deg);
-animation: quivering 0.3s infinite;
-
-}
-
-.dying03{
-
-filter: brightness(0%)
-
-
-}
 
 
 /* grain filter overlay over the entire screen?? */
