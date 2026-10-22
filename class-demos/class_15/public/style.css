@@ -1,0 +1,14 @@
+nav{
+
+background-color: fuchsia;
+
+}
+
+/* multi select two elements with the same rule
+a: visited is for a tags that have already been click /* */ 
+
+a, a:visited{
+
+color: white;
+
+}
