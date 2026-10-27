@@ -1,0 +1,34 @@
+ {% include "partial-nav.njk"%}
+
+
+{# to send data to the server we need attributes in the form #}
+{# attributes: method, action #}
+{# method: what type of http request are we making? For forms, this will always be POST #}
+{# action: the route that will handle the data on the server #}
+{# for every <form></form> html with a method and action, we need an app.post in the server,js #}
+<html>
+<head>
+  <link href="form.css" rel="stylesheet" />
+
+</head>
+<h1 class="info">
+    Share some news or thoughts with the heterochromia community!
+</h1>
+<body>
+    <div class="goodandbad">
+    It can be good news or bad news. Heterochromia is both a gift and a curse.
+    </div>
+</body>
+
+</html>
+<form class="form" method="POST" action="/send-message">
+{# inputs are the data to be sent #}
+{# in order to priocess the data we need to include the name attribute which will name the property in the request.body #}
+<input type="text" placeholder="write a headline" name="caption">
+{# there are l;ots of different input types you can use to accept #}
+<input type="text" placeholder="write some news" name="news">
+{# always we need to include a submit button #}
+
+<input type="submit" value="send message">
+
+</form>

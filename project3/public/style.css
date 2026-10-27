@@ -1,0 +1,101 @@
+
+.title1,
+.title-left,
+.title-right,
+.title2,
+.title3 {
+
+font-size: 200px;
+font-weight: 800;
+font-family: arial;
+
+}
+
+.title1,
+.title-left,
+.title-right,
+.title2,
+.title3,
+.tired,
+.tired1,
+.tired2,
+.tired3,
+.tired4,
+.tired5,
+.action,
+.homophobic,
+.davidbowie,
+.faq {
+
+text-align:center;
+font-weight: 600;
+font-family: arial;
+
+
+}
+
+.tired,
+.tired1,
+.tired2,
+.tired3,
+.tired4,
+.tired5,
+.action,
+.homophobic,
+.davidbowie,
+.faq {
+
+ padding: 20;
+ 
+}
+
+/* i watched a youtube video to show me how to split a background down the middle with css  */
+/* https: //youtu.be/x-4aGYRmHIw?si=VaY1vgSF0k2qaAht */
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    /* Ensures the background covers the full screen height */
+    background: linear-gradient(to right,
+            #7697f3 0%,
+            #7697f3 50%,
+            #f59a07 50%,
+            #f59a07 100%);
+}
+
+.form {
+
+font-size: 50px;
+padding: 20;
+
+
+}
+
+.tired,
+.tired1,
+.tired2,
+.tired3,
+.tired4,
+.tired5 {
+
+font-size: 50px;
+padding: 20px;
+
+
+}
+
+.newsButton {
+
+padding: 60px;
+
+}
+
+.driversLicense,
+.mii,
+ .sperm {
+
+display: block;
+margin: 0 auto;
+
+}

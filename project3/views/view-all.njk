@@ -1,0 +1,89 @@
+<html>
+
+<head>
+<title>news</title>
+  <link href="/view.css" rel="stylesheet" />
+
+</head>
+
+
+
+
+ {# in ordder to accesds the server data, we need to use the variable we passed in the server.js for the render of the view-all .njk #}
+ {# messagesArrayFromServer #}
+
+ <body>
+    {% include "partial-nav.njk"%}
+      {% for singleMessage in messagesArrayFromServer %}
+
+<h3 class="userHeading"
+
+
+>{{singleMessage.caption}}</h3>
+
+<div class="userInfo">{{ singleMessage.news }}
+
+</div>
+
+ {% endfor %}
+
+<div class="heading">
+Baldur's Gate 3 has a heterochromia customization function!!!
+</div>
+
+<div class="info">
+
+Thank you Bg3 for your courage! The gaming commnunity has truly never been this progressive...
+
+</div>
+
+<div>
+
+<img src="/bg3.png" alt="bg3">
+
+</div>
+
+<div class="heading2">
+
+    My culture is not your costume
+
+</div>
+
+<div class="info2">
+
+    Please stop with these obnoxious OC's that reinforce harmful stereotypes. Why are the characters with heterochromia always the "insane" or "edgy" ones?
+
+</div>
+
+<div>
+
+<img src="/oc.png" alt="oc">
+
+</div>
+
+<div class="heading3">
+
+  Confession: I like my blue eye more than my green eye.
+
+</div>
+
+<div class="info3">
+
+    Remember to love both of your eyes equally. But I understand it can be hard in a world that only appreciates a singular eye color at a time. Be patient with yourself.
+
+</div>
+<div>
+<img src="/blueEye.png" alt="blue">
+
+</div>
+
+
+<div class="disclaimer">
+
+    *all posts are anonymous*
+
+</div>
+
+</body>
+</html>
+
