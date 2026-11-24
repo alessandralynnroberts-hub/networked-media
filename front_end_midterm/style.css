@@ -1,145 +1,119 @@
 html {
-   height: 100%;
+    height: 100%;
 }
 
 body {
     background-color: black;
     min-height: 100vh;
-        /* Takes up full vertical height, but expands if content grows */
-        width: 100%;
+    width: 100%;
 }
 
-
-
-
-/* figured out how to do this overlapping part with the help of Professor Lenin in front end web dev */
-/* i was struggling so much with getting one image to disappear and reveal another underneath */
+/* IMAGE OVERLAP */
 
 .overlap {
-
-
-position: relative;
-width: 500px;
+    position: relative;
+    width: 500px;
     height: 500px;
-
-
 }
 
-.overlap img{
-
+.overlap img {
     position: absolute;
-
-width: 500;
-    height: 500;
+    width: auto;
+    height: auto;
     transition-duration: 130s;
     transition-delay: 2s;
-    display: block;
     margin-left: auto;
     margin-right: 500px;
     left: 200px;
 }
 
-/* font mimicking two of my experimental short films I've done  */
+/* Hide animation GIFs by default */
 
-.message {
-    filter: blur(2px);
-    color: rgb(251, 251, 120);
-    max-width: 1000px;
-    font-family: OCR A Std, monospace;
-    font-size: 50px;
-    display: block;
-    margin: 20px 0 20px 200px;
-    padding: 20px;
+.hand,
+.transition,
+.eye,
+.moon,
+.slimeMold,
+.goop,
+.lumiere {
+    display: none;
 }
 
-.bio {
+/* TEXT STYLING */
+
+.nav {
+
+display: flex;
+flex-direction: column;
+align-items: flex-end;
+position: fixed;
+top: 20px;
+right: 20px;
+filter: blur(1.5px);
+color: rgb(255, 255, 183);
+row-gap: 10px;
+font-family: OCR A Std, monospace;
+margin-top: 100px;
+font-size: 40px;
+}
+
+.nav a {
+    padding: 20px 20px;
+}
+
+
+.header {
 
 filter: blur(1.5px);
-    color: rgb(251, 251, 120);
-    max-width: 1000px;
+    color: rgb(255, 255, 183);
     font-family: OCR A Std, monospace;
     font-size: 35px;
     display: block;
-    margin: 20px 0 20px 200px;
-    padding: 10px;
+    margin: 100px 0 20px 200px;
 
 }
+
+.header div {
+
+    padding: 20px 20px;
+
+
+}
+
 
 
 .films {
-    filter: blur(2px);
-    color: rgb(251, 251, 120);
-    max-width: 1000px;
-    padding: 20px;
-    font-family: OCR A Std, monospace;
-    font-size: 50px;
-    text-align: end;
-    margin-left: 500px;
+    color: rgb(255, 255, 183);
 
-    display: block;
-    text-decoration: none;
 }
 
 .producing {
-    filter: blur(2px);
-    color: rgb(251, 251, 120);
-    max-width: 1000px;
-    padding: 20px;
-    font-family: OCR A Std, monospace;
-    font-size: 50px;
-text-align: end;
-    margin-left: 500px;
-
+     color: rgb(255, 255, 183);
+   
 }
 
 .sandbox {
-
-filter: blur(2px);
-    color: rgb(251, 251, 120);
-    max-width: 1000px;
-    padding: 20px;
-    font-family: OCR A Std, monospace;
-    display: grid;
-    place-content: end;
-    font-size: 50px;
-    margin-left: 500px;
-
+    color: rgb(255, 255, 183);
 }
 
 .resume {
-
-filter: blur(2px);
-    color: rgb(251, 251, 120);
-    max-width: 1000px;
-    padding: 20px;
-    font-family: OCR A Std, monospace;
-    font-size: 50px;
-    text-align: end;
-    margin-left: 500px;
-
-
+    color: rgb(255, 255, 183);
 }
 
-.films,
-.producing,
-.sandbox,
-.resume {
-    position: relative;
-    top: -500px;
-    margin-top: 0;
-}
+/* KEEP ORIGINAL NAVIGATION POSITIONING */
 
 
-/* red scary text */
-/* also did this with help of front end web dev we were literally learning this in class */
+
+/* RED TEXT */
 
 .loud {
     color: rgb(212, 0, 0);
 }
 
-.idle {
+/* DEFAULT IDLE IMAGE */
 
-width: 600;
+.idle {
+    width: 600px;
     height: 300px;
     transition-property: transform;
     transition-duration: 130s;
@@ -149,14 +123,44 @@ width: 600;
     margin-right: 1000px;
     left: 200px;
     padding: 10px;
-
 }
 
-.overlap:hover .idle {
+/* SANDBOX HOVER: SHOW HAND */
 
+body:has(.sandbox:hover) .idle {
+    display: none;
+}
 
-display: none;
+body:has(.sandbox:hover) .lumiere {
+    display: block;
+}
 
+/* FILMS HOVER: SHOW TRANSITION */
+
+/* SANDBOX HOVER: SHOW HAND */
+
+body:has(.resume:hover) .idle {
+    display: none;
+}
+
+body:has(.resume:hover) .eye {
+    display: block;
+}
+
+body:has(.producing:hover) .idle {
+    display: none;
+}
+
+body:has(.producing:hover) .slimeMold {
+    display: block;
+}
+
+body:has(.producing:hover) .idle {
+    display: none;
+}
+
+body:has(.films:hover) .goop {
+    display: block;
 }
 
 /* thought about making these organs take up the whole screen */
